@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+          <div id="header">
+
+    </div>
+<div id="we_are_data">
+     <div id="repo_card">
+
+    </div>
+
+    <div id="based_on_interest">
+<h2>Here is what we found based on Your Interest</h2>
+<hr>
+<div id="int1">
+    <small> Based on topics you've starred</small>
+    <h2>awari-font-0</h2>
+   
+</div>
+<div id="int1">
+   
+    <p>There are 16 public repositories matching this topic</p>
+    <h2>shadowlik / pokeloja</h2>
+   
+</div>
+<div id="int1">
+  <h2>gabosmendez / clone-awari</h2>
+   
+</div>
+    </div>
+    <div id="addver">
+  <a href="..com">Trending repositories today</a> 
+  
+  <h3>cat-milk</h3> 
+    <p>
+        / Anime-Girls-Holding-Programming-Books
+    Anime Girls Holding Programming Books 
+    </p> 
+  <hr>
+  <h3>tooth/awsom....</h3> 
+  <p>
+    Awesome list of open-source startup alternatives to well-known SaaS products 🚀
+  </p> 
+<hr>
+<h3>hoppscotch
+    / hoppscotch</h3> 
+<p>
+    👽 Open source API development ecosystem - https://hoppscotch.io
+</p> 
+<hr>
+<h3>cat-milk</h3> 
+<p>
+    / Anime-Girls-Holding-Programming-Books
+Anime Girls Holding Programming Books 
+</p> 
+
+
+
+
+    </div>
+</div>
+    
+
+   
+</div>
+   
+   
+  
+
+
+</body>
+</html>
+<script type="module">
+import getdata from "./script/mini.js"
+import navbar from "./components/navbar.js"
+let nav_div = document.getElementById("header")
+
+nav_div.innerHTML = navbar();
+
+let profile = document.getElementById("profile-img")
+
+let search_input = document.getElementById("search");
+
+search_input.addEventListener("keypress",async (e)=>{
+
+if(e.key === "Enter"){
+    let value1 = search_input.value
+ let ans = await getdata(`https://api.github.com/users/${value1}`)
+display(ans)
+profile.src= ans.avatar_url;
+
+}
+  
+})
+
+
+let repo_cont = document.getElementById("repo_card")
+
+function display(ans){
+repo_cont.innerHTML =""
+ 
+        let div = document.createElement("div");
+
+        let img = document.createElement("img");
+        img.src = ans.avatar_url;
+
+        let h2 = document.createElement("h1")
+        h2.textContent = ans.name;
+let user =  document.createElement("h2");
+user.textContent = ans.login
+let Bio =  document.createElement("h4");
+Bio.textContent = ans.bio
+        let h3 = document.createElement("h3");
+
+        h3.textContent = "followers = " + ans.followers;
+
+
+        let follow= document.createElement("h3");
+
+follow.textContent = "following = " + ans.following;
+        div.append(img,h2,user,Bio,h3,follow);
+
+
+
+
+
+
+
+
+repo_cont.append(div)
+
+   
+}
+
+
+
+
+
+ 
+</script>

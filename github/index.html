@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+       <div id="navbar_div"></div>
+<div id="repo_detail">
+
+</div>
+        </div>
+    </div>
+</body>
+</html>
+<script type = "module">
+
+
+
+
+
+
+import getdata from "./script/mini.js"
+    import navbar from "./components/navbar.js"
+     var nav = document.getElementById("navbar_div")
+     nav.innerHTML = navbar()
+
+let search_input = document.getElementById("search");
+let profile = document.getElementById("profile-img");
+
+
+search_input.addEventListener("keypress", async (e)=>{
+
+    if(e.key == "Enter"){
+        let value1 = search_input.value;
+let ans = await getdata(`https://api.github.com/users/${value1}`)
+
+console.log(ans)
+ profile.src= ans.avatar_url;
+ let repo = await getdata(ans.repos_url)
+
+display(repo)
+
+
+// console.log(repo)
+        // console.log("hello")
+    }
+
+})
+let bag = document.getElementById("repo_detail")
+function display(repo){
+
+    repo.forEach((e)=>{
+
+let repo_show =document.createElement("div");
+
+let repo_id = document.createElement("p");
+repo_id.textContent = e.id
+let repo_name = document.createElement("p");
+repo_name.textContent = e.full_name
+repo_show.append(repo_id,repo_name);
+
+bag.append(repo_show)
+    })
+    
+    
+}
+
+
+console.log(nav)
+</script>

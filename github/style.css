@@ -1,0 +1,138 @@
+body{
+    background-color: rgb(36,41,46);
+}
+
+
+
+#container{
+ 
+    width: 100%;
+    height: 100%;
+   
+}
+#header{
+border: 2px solid white;
+ width: 100%;
+ height: 60px;
+display: flex;
+justify-content: space-between;
+background-color: rgb(13,17,23);
+color:white;
+
+}
+img{
+    margin-top: 10px;
+    margin-left: 10px;
+    border-radius: 50%;
+}
+input{
+    height: 30px;
+   margin-top: 10px;
+   margin-left: 15px;
+}
+.nav_div{
+    margin-left: 15px;
+    line-height: 60px;
+    vertical-align: middle;
+    font-family: ple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    font-weight: 700;
+}
+.nav_div:hover{
+ color:rgb(143, 143, 143)
+}
+#oneside{
+    display: flex;
+}
+#bell{
+    vertical-align: middle;
+    line-height: 60px;
+    
+}
+#twoside{
+    display: flex;
+    justify-content: space-between;
+}
+#repo_detail{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:10px;
+
+}
+
+#repo_detail > div{
+    border: 4px solid #c2c2c2;
+    padding: 10px;
+    background-color: #756213;
+    background-image: linear-gradient(315deg, #756213 0%, #000000 74%);
+    color:white;
+    font-weight: bold;
+    
+}
+#repo_card{
+margin-left: 20px;
+border-radius: 19px;
+   background-color:  rgb(13,17,23);
+   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 400px;
+    height: 450px;
+    align-items: center;
+  color:rgb(157,165,180);
+    justify-content: center;
+    line-height: 22px;
+    text-align: center;
+}
+#repo_card img{
+    width: 200px;
+}
+#we_are_data{
+  
+    display: flex;
+}
+#repo_card{
+    flex:2;
+margin-top: 10px;
+}
+#based_on_interest{
+
+    flex:3;
+color:rgb(157,165,180);
+margin-top: 30px;
+background-color: rgb(22,27,34);margin-left: 20px;
+}
+#addver{
+    flex:2
+
+}
+#int1{
+  
+    height: 25%;
+  
+    box-shadow: rgba(3, 3, 3, 0.2) 0px 2px 8px 0px;
+    background-color: rgb(13,17,23);
+text-align: start;
+
+
+}
+h2,p,small{
+    margin-left: 10px;
+}
+#addver{
+    margin-top: 10px;
+    background-color: rgb(44,49,58);
+    margin-left: 20px;
+     box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 8px 0px;
+     border-radius: 15px;
+
+color:beige
+}
+#addver h3,a{
+    margin-left: 10px;
+}
+hr{
+ border:0.5px solid black
+}
+a{
+    text-decoration: none;
+    color:beige
+}
